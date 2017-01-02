@@ -25,8 +25,9 @@ BuildArch:	noarch
 BuildRequires:	java-rpmbuild
 BuildRequires:	maven-local
 BuildRequires:	jgoodies-common #mvn(com.jgoodies:jgoodies-common)
-# The following is required for tests only
-BuildRequires:	mvn(junit:junit)
+# The followings are required for tests only
+BuildRequires:	fontconfig
+BuildRequires:	fonts-ttf-dejavu
 
 Requires:	java-headless >= 1.6
 Requires:	jpackage-utils
