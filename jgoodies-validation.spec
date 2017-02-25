@@ -1,3 +1,5 @@
+%{?_javapackages_macros:%_javapackages_macros}
+
 %define oname JGoodies
 %define shortoname Validation
 %define releasedate 20141229
@@ -22,16 +24,12 @@ Source0:	http://www.jgoodies.com/download/libraries/%{shortname}/%{name}-%{overs
 # Source0:	https://repo1.maven.org/maven2/com/%{bname}/%{name}/%{version}/%{name}-%{version}-sources.jar
 BuildArch:	noarch
 
-BuildRequires:	java-rpmbuild
 BuildRequires:	maven-local
-BuildRequires:	jgoodies-common #mvn(com.jgoodies:jgoodies-common)
-# The followings are required for tests only
+BuildRequires:	mvn(com.jgoodies:jgoodies-common)
+BuildRequires:	mvn(junit:junit)
+BuildRequires:	mvn(org.sonatype.oss:oss-parent:pom:)
 BuildRequires:	fontconfig
 BuildRequires:	fonts-ttf-dejavu
-
-Requires:	java-headless >= 1.6
-Requires:	jpackage-utils
-Requires:	jgoodies-common #mvn(com.jgoodies:jgoodies-common)
 
 %description
 The JGoodies Validation helps you validate user input in Swing applications
